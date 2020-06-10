@@ -1,0 +1,9 @@
+{
+    "verbose": false,
+    "ext": "mjs,js,json",
+    "ignore": [
+    ],
+    "watch": [
+        "utils/**/*.mjs"
+    ]
+}

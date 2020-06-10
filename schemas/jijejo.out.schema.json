@@ -1,0 +1,27 @@
+{
+    "$id": "https://jijejo/v1.0.0/jijejo.out.schema.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "json *out* for jijejo",
+    "type": "object",
+    "required": [
+        "iserr",
+        "isout",
+        "err"
+    ],
+    "properties": {
+        "iserr": {
+            "type": "boolean",
+            "const": false,
+            "default": false
+        },
+        "isout": {
+            "type": "boolean",
+            "const": true,
+            "default": true
+        },
+        "out": {
+            "default": {},
+            "description": "classic out payload, accept any type"
+        }
+    }
+}

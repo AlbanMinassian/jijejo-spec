@@ -1,0 +1,68 @@
+{
+    "test_jsonin_one_param": {
+        "title": "<title>",
+        "description": "",
+        "given": "jsonin",
+        "examples": {
+            "1": {
+                "title": "jsonin, null param",
+                "param1": null,
+                "expect": { "in": null, "meta": { } }
+            },
+            "2": {
+                "title": "jsonin, string param",
+                "param1": "aa",
+                "expect": { "in": "aa", "meta": { } }
+            },
+            "3": {
+                "title": "jsonin, array param",
+                "param1": [ "aa", "bb" ],
+                "expect": { "in": [ "aa", "bb" ], "meta": { } }
+            }
+        }
+    },
+    "test_jsonerr_one_param": {
+        "title": "<title>",
+        "description": "",
+        "given": "jsonerr",
+        "examples": {
+            "1": {
+                "title": "jsonerr, null param",
+                "param1": null,
+                "expect": { "iserr": true, "isout": false, "err": null, "meta": { } }
+            },
+            "2": {
+                "title": "jsonerr, string param",
+                "param1": "aa",
+                "expect": { "iserr": true, "isout": false, "err": "aa", "meta": { } }
+            },
+            "3": {
+                "title": "jsonerr, array param",
+                "param1": [ "aa", "bb" ],
+                "expect": { "iserr": true, "isout": false, "err": [ "aa", "bb" ], "meta": { } }
+            }
+        }
+    },
+    "test_jsonout_one_param": {
+        "title": "<title>",
+        "description": "",
+        "given": "jsonout",
+        "examples": {
+            "1": {
+                "title": "jsonout, null param",
+                "param1": null,
+                "expect": { "iserr": false, "isout": true, "out": null, "meta": { } }
+            },
+            "2": {
+                "title": "jsonout, string param",
+                "param1": "aa",
+                "expect": { "iserr": false, "isout": true, "out": "aa", "meta": { } }
+            },
+            "3": {
+                "title": "jsonout, array param",
+                "param1": [ "aa", "bb" ],
+                "expect": { "iserr": false, "isout": true, "out": [ "aa", "bb" ], "meta": { } }
+            }
+        }
+    }
+}

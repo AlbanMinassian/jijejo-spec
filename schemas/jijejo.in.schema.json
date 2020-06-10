@@ -1,0 +1,21 @@
+{
+    "$id": "https://jijejo/v1.0.0/jijejo.in.schema.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "json *in* for jijejo",
+    "type": "object",
+    "required": [
+        "meta",
+        "in"
+    ],
+    "properties": {
+        "meta": {
+            "type": "object",
+            "default": {},
+            "description": "free meta data like language, .in schema information ..."
+        },
+        "in": {
+            "default": {},
+            "description": "classic payload, acccept any type"
+        }
+    }
+}
