@@ -7,7 +7,7 @@
     },
     "description": "jijejo schemas and specification",
     "private": false,
-    "version": "1.0.0",
+    "version": "1.0.1",
     "type": "module",
     "main": "src/index.mjs",
     "license": "CC-BY-NC-SA-4.0",

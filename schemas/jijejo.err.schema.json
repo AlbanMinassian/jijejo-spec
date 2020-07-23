@@ -1,14 +1,20 @@
 {
-    "$id": "https://jijejo/v1.0.0/jijejo.err.schema.json",
+    "$id": "https://jijejo/jijejo.err.schema.json?version=v1.0.0",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "json *err* for jijejo",
     "type": "object",
     "required": [
+        "meta",
         "isout",
         "iserr",
         "err"
     ],
     "properties": {
+        "meta": {
+            "type": "object",
+            "default": {},
+            "description": "free meta data like language, .err schema information ..."
+        },
         "isout": {
             "type": "boolean",
             "const": false,

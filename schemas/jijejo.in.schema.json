@@ -1,5 +1,5 @@
 {
-    "$id": "https://jijejo/v1.0.0/jijejo.in.schema.json",
+    "$id": "https://jijejo/jijejo.in.schema.json?version=v1.0.0",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "json *in* for jijejo",
     "type": "object",
