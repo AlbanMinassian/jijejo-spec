@@ -27,7 +27,7 @@ jijejo = (**j**)son (**i**)n + (**j**)son (**e**)rr + (**j**)son (**o**)ut
 ```
 
 - see [schemas/jijejo.err.schema.json](schemas/jijejo.err.schema.json)
-- see [test/features/jijejo.jsonerr.feature](test/features/jijejo.jsonerr.feature)
+- see [test/features/jsonerr.feature](test/features/jsonerr.feature)
 
 ## jo = json out
 
@@ -41,7 +41,7 @@ jijejo = (**j**)son (**i**)n + (**j**)son (**e**)rr + (**j**)son (**o**)ut
 ```
 
 - see [schemas/jijejo.out.schema.json](schemas/jijejo.out.schema.json)
-- see [test/features/jijejo.jsonout.feature](test/features/jijejo.jsonout.feature)
+- see [test/features/jsonout.feature](test/features/jsonout.feature)
 
 ## functions
 
@@ -49,7 +49,7 @@ jijejo = (**j**)son (**i**)n + (**j**)son (**e**)rr + (**j**)son (**o**)ut
 
 #### jsonin
 
-helper to create jsonin. See all tests [test/features/jijejo.jsonin.feature](test/features/jijejo.jsonin.feature)
+helper to create jsonin. See all tests [test/features/jsonin.feature](test/features/jsonin.feature)
 
 ```js
 jsonin({"hello", "in"}) // return { meta:{}, in: {"hello", "in"}}
@@ -58,7 +58,7 @@ jsonin({"hello", "in"}, {"hello", "meta"}) // return { meta:{"hello", "meta"}, i
 
 #### jsonerr
 
-helper to create jsonerr. See all tests [test/features/jijejo.jsonerr.feature](test/features/jijejo.jsonerr.feature)
+helper to create jsonerr. See all tests [test/features/jsonerr.feature](test/features/jsonerr.feature)
 
 ```js
 jsonerr({"hello", "err"}) // return { meta:{}, iserr: true, isout: false, err: {"hello", "err"}}
@@ -67,7 +67,7 @@ jsonerr({"hello", "err"}, {"hello", "meta"}) // return { meta:{"hello", "meta"},
 
 #### jsonout
 
-helper to create jsonout. See all tests [test/features/jijejo.jsonout.feature](test/features/jijejo.jsonout.feature)
+helper to create jsonout. See all tests [test/features/jsonout.feature](test/features/jsonout.feature)
 
 ```js
 jsonout({"hello", "out"}) // return { meta:{}, iserr: false, isout: true, out: {"hello", "out"}}
@@ -78,7 +78,7 @@ jsonout({"hello", "out"}, {"hello", "meta"}) // return { meta:{"hello", "meta"},
 
 #### jicheck = (j)son (i)n (check)
 
-This function must verify jsonin basic attributs. See all tests [test/features/jijejo.jicheck.feature](test/features/jijejo.jicheck.feature)
+This function must verify jsonin basic attributs. See all tests [test/features/jicheck.feature](test/features/jicheck.feature)
 
 ```js
 jicheck({}) // return error because missing attribut in
@@ -87,7 +87,7 @@ jicheck({in: {} }) // return ok, jsonin is valid
 
 #### jecheck = (j)son (e)rr (check)
 
-This function must verify jsonerr basic attributs. See all tests [test/features/jijejo.jecheck.feature](test/features/jijejo.jecheck.feature)
+This function must verify jsonerr basic attributs. See all tests [test/features/jecheck.feature](test/features/jecheck.feature)
 
 ```js
 jecheck({isout: true, iserr: true, err: {} }) // return error because isout==true
@@ -96,7 +96,7 @@ jecheck({isout: false, iserr: true, err: {} }) // return ok, jsonerr is valid
 
 #### jocheck = (j)son (o)ut (check)
 
-This function must verify jsonout basic attributs. See all tests [test/features/jijejo.jocheck.feature](test/features/jijejo.jocheck.feature)
+This function must verify jsonout basic attributs. See all tests [test/features/jocheck.feature](test/features/jocheck.feature)
 
 ```js
 jocheck({isout: true, iserr: true, out: {} }) // return error because iserr==true
