@@ -6,7 +6,7 @@ jijejo = (**j**)son (**i**)n + (**j**)son (**e**)rr + (**j**)son (**o**)ut
 
 ## ji = json in
 
-```json
+```js
 {
     "in":  [] | {} | "string" | true | false | null, // 'in' payload
     "meta": {}, // optionnal content
@@ -17,7 +17,7 @@ jijejo = (**j**)son (**i**)n + (**j**)son (**e**)rr + (**j**)son (**o**)ut
 
 ## je = json err
 
-```json
+```js
 {
     "isout": false, // if err then .isout always 'false'
     "iserr": true,  // if err then .iserr always 'true'
@@ -31,7 +31,7 @@ jijejo = (**j**)son (**i**)n + (**j**)son (**e**)rr + (**j**)son (**o**)ut
 
 ## jo = json out
 
-```json
+```js
 {
     "iserr": false,  // if ok then .iserr always 'false'
     "isout": true,   // if ok then .isout always 'true'
