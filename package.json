@@ -5,9 +5,9 @@
         "email": "alban.minassian@free.fr",
         "url": "https://twitter.com/AlbanMinassian"
     },
-    "description": "jijejo schemas and specification",
+    "description": "jijejo specification",
     "private": false,
-    "version": "1.0.2",
+    "version": "1.0.4",
     "type": "module",
     "main": "src/index.mjs",
     "license": "CC-BY-NC-SA-4.0",

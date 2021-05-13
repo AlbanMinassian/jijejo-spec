@@ -1,107 +1,75 @@
-# jijejo
+# jijejo-spec
 
-Jijejo is a universal and easy api for all yours applications or libraries. Jijejo is a human and light alternative of [json:api](https://jsonapi.org/), [json-ld](https://json-ld.org/), [hal](http://stateless.co/hal_specification.html), [OpenAPI](https://swagger.io/specification/), [GraphQL](https://graphql.org/), [joi](https://github.com/hapijs/joi), [zod](https://github.com/vriad/zod), [yup](https://github.com/jquense/yup), [hydra](http://www.markus-lanthaler.com/hydra/) ... Back to basics to get ahead in your business.
+Jijejo is a universal and easy api for all yours applications or libraries. Jijejo is a human and light alternative of [json:api](https://jsonapi.org/), [json-ld](https://json-ld.org/), [hal](http://stateless.co/hal_specification.html), [openapi](https://swagger.io/specification/), [graphql](https://graphql.org/), [joi](https://github.com/hapijs/joi), [zod](https://github.com/vriad/zod), [yup](https://github.com/jquense/yup), [hydra](http://www.markus-lanthaler.com/hydra/) ... Back to basics to get ahead in your business.
 
 jijejo = (**j**)son (**i**)n + (**j**)son (**e**)rr + (**j**)son (**o**)ut
 
-## ji = json in
+<!--<img src="https://cloud.githubusercontent.com/assets/svg/draft.svg" width="50%" height="50%">-->
+![https://cloud.githubusercontent.com/assets/svg/draft.svg](assets/svg/draft.png)
+
+## General specification
+
+> jijejo's specifications can be summarized in 3 simple rules, nothing else to learn.
+
+### ji = (j)son (i)n
+
+When you call a function, first param is a json with always/only two attributs **`.in`**=`<any>` and `.meta`=`{...}`.
 
 ```js
 {
     "in":  [] | {} | "string" | true | false | null, // 'in' payload
-    "meta": {}, // optionnal content
+    "meta": {}, // optionnal meta content
 }
 ```
 
-- see [schemas/jijejo.in.schema.json](schemas/jijejo.in.schema.json)
+- see schema json [schemas/jijejo.in.schema.json](schemas/jijejo.in.schema.json)
+- see also [jijejo-node](https://github.com/AlbanMinassian/jijejo-node) to quickly write [jsonin()](https://github.com/AlbanMinassian/jijejo-node#jsonin) or validate [jicheck()](https://github.com/AlbanMinassian/jijejo-node#jicheck--json-in-check) your (j)son (i)n
 
-## je = json err
+### je = (j)son (e)rr
+
+When function detect an error then it always/only return a json with 4 attributs **`.err`**=`<any>`, `.meta`=`{...}`, `.isout`=`false` and **`.iserr`=`true`**.
 
 ```js
 {
-    "isout": false, // if err then .isout always 'false'
-    "iserr": true,  // if err then .iserr always 'true'
+    "isout": false, // if error then .isout always 'false'
+    "iserr": true,  // if error then .iserr always 'true'
     "err":  [] | {} | "string" | true | false | null, // 'err' payload
-    "meta": {}, // optionnal content
+    "meta": {}, // optionnal meta content
 }
 ```
 
-- see [schemas/jijejo.err.schema.json](schemas/jijejo.err.schema.json)
-- see [test/features/jsonerr.feature](test/features/jsonerr.feature)
+- see schema json [schemas/jijejo.err.schema.json](schemas/jijejo.err.schema.json)
+- see also [jijejo-node](https://github.com/AlbanMinassian/jijejo-node) to quickly write [jsonerr()](https://github.com/AlbanMinassian/jijejo-node#jsonerr) or validate [jecheck()](https://github.com/AlbanMinassian/jijejo-node#jecheck--json-err-check) your (j)son (e)rr
 
-## jo = json out
+It is advisable to catch all unpredictable errors like this:
+
+```js
+try{ 
+    // ...your code with unpredictable error ... 
+} catch(error) {  
+    return { err: { message: error.message }, iserr: true, isout: false, meta: { } }
+}
+```
+
+### jo = (j)son (o)ut
+
+When function run without error then it always/only return a json with 4 attributs **`.out`**=`<any>`, `.meta`=`{...}`, **`.isout`=`true`** and `.iserr`=`false`.
 
 ```js
 {
     "iserr": false,  // if ok then .iserr always 'false'
     "isout": true,   // if ok then .isout always 'true'
     "out":  [] | {} | "string" | true | false | null, // 'out' payload
-    "meta": {}, // optionnal content
+    "meta": {}, // optionnal meta content
 }
 ```
 
-- see [schemas/jijejo.out.schema.json](schemas/jijejo.out.schema.json)
-- see [test/features/jsonout.feature](test/features/jsonout.feature)
+- see schema json [schemas/jijejo.out.schema.json](schemas/jijejo.out.schema.json)
+- see also [jijejo-node](https://github.com/AlbanMinassian/jijejo-node) to quickly write [jsonout()](https://github.com/AlbanMinassian/jijejo-node#jsonout) or validate [jocheck()](https://github.com/AlbanMinassian/jijejo-node#jocheck--json-out-check) your (j)son (o)ut
 
-## functions
+## toolkit
 
-### creates
-
-#### jsonin
-
-helper to create jsonin. See all tests [test/features/jsonin.feature](test/features/jsonin.feature)
-
-```js
-jsonin({"hello", "in"}) // return { meta:{}, in: {"hello", "in"}}
-jsonin({"hello", "in"}, {"hello", "meta"}) // return { meta:{"hello", "meta"}, in: {"hello", "in"}}
-```
-
-#### jsonerr
-
-helper to create jsonerr. See all tests [test/features/jsonerr.feature](test/features/jsonerr.feature)
-
-```js
-jsonerr({"hello", "err"}) // return { meta:{}, iserr: true, isout: false, err: {"hello", "err"}}
-jsonerr({"hello", "err"}, {"hello", "meta"}) // return { meta:{"hello", "meta"}, iserr: true, isout: false, out: {"hello", "err"}}
-```
-
-#### jsonout
-
-helper to create jsonout. See all tests [test/features/jsonout.feature](test/features/jsonout.feature)
-
-```js
-jsonout({"hello", "out"}) // return { meta:{}, iserr: false, isout: true, out: {"hello", "out"}}
-jsonout({"hello", "out"}, {"hello", "meta"}) // return { meta:{"hello", "meta"}, iserr: false, isout: true, out: {"hello", "out"}}
-```
-
-### checks
-
-#### jicheck = (j)son (i)n (check)
-
-This function must verify jsonin basic attributs. See all tests [test/features/jicheck.feature](test/features/jicheck.feature)
-
-```js
-jicheck({}) // return error because missing attribut in
-jicheck({in: {} }) // return ok, jsonin is valid
-```
-
-#### jecheck = (j)son (e)rr (check)
-
-This function must verify jsonerr basic attributs. See all tests [test/features/jecheck.feature](test/features/jecheck.feature)
-
-```js
-jecheck({isout: true, iserr: true, err: {} }) // return error because isout==true
-jecheck({isout: false, iserr: true, err: {} }) // return ok, jsonerr is valid
-```
-
-#### jocheck = (j)son (o)ut (check)
-
-This function must verify jsonout basic attributs. See all tests [test/features/jocheck.feature](test/features/jocheck.feature)
-
-```js
-jocheck({isout: true, iserr: true, out: {} }) // return error because iserr==true
-jocheck({isout: true, iserr: false, out: {} }) // return ok, jsonout is valid
-```
+- [jijejo-node](https://github.com/AlbanMinassian/jijejo-node) which follow specification of jijejo [functions](functions.md).
 
 ## license
 
