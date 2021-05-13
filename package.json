@@ -7,7 +7,7 @@
     },
     "description": "jijejo specification",
     "private": false,
-    "version": "1.0.4",
+    "version": "1.0.5",
     "type": "module",
     "main": "src/index.mjs",
     "license": "CC-BY-NC-SA-4.0",
