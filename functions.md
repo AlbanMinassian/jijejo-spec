@@ -7,8 +7,8 @@
 This function must help to create jsonin. See all features [test/features.jsonin.feature](test/features.jsonin.feature)
 
 ```js
-jsonin({"hello", "in"}) // return { meta:{}, in: {"hello", "in"}}
-jsonin({"hello", "in"}, {"hello", "meta"}) // return { meta:{"hello", "meta"}, in: {"hello", "in"}}
+jsonin({"hello": "in"}) // return { meta:{}, in: {"hello": "in"}}
+jsonin({"hello": "in"}, {"hello": "meta"}) // return { meta:{"hello": "meta"}, in: {"hello": "in"}}
 ```
 
 ## jsonerr()
@@ -16,8 +16,8 @@ jsonin({"hello", "in"}, {"hello", "meta"}) // return { meta:{"hello", "meta"}, i
 This function must help to create jsonerr. See all features [test/features.jsonerr.feature](test/features.jsonerr.feature)
 
 ```js
-jsonerr({"hello", "err"}) // return { meta:{}, iserr: true, isout: false, err: {"hello", "err"}}
-jsonerr({"hello", "err"}, {"hello", "meta"}) // return { meta:{"hello", "meta"}, iserr: true, isout: false, out: {"hello", "err"}}
+jsonerr({"hello": "err"}) // return { meta:{}, iserr: true, isout: false, err: {"hello": "err"}}
+jsonerr({"hello": "err"}, {"hello": "meta"}) // return { meta:{"hello": "meta"}, iserr: true, isout: false, out: {"hello": "err"}}
 ```
 
 ## jsonout()
@@ -25,8 +25,8 @@ jsonerr({"hello", "err"}, {"hello", "meta"}) // return { meta:{"hello", "meta"},
 This function must help to create jsonout. See all features [test/features.jsonout.feature](test/features.jsonout.feature)
 
 ```js
-jsonout({"hello", "out"}) // return { meta:{}, iserr: false, isout: true, out: {"hello", "out"}}
-jsonout({"hello", "out"}, {"hello", "meta"}) // return { meta:{"hello", "meta"}, iserr: false, isout: true, out: {"hello", "out"}}
+jsonout({"hello": "out"}) // return { meta:{}, iserr: false, isout: true, out: {"hello": "out"}}
+jsonout({"hello": "out"}, {"hello": "meta"}) // return { meta:{"hello": "meta"}, iserr: false, isout: true, out: {"hello": "out"}}
 ```
 
 ## jicheck() = (j)son (i)n check
@@ -56,7 +56,7 @@ jocheck({ isout: true, iserr: true, out: {} }); // throw error because .iserr==t
 jocheck({ isout: true, iserr: false, out: {}, meta: {} }); // return ok, json "out" is valid
 ```
 
-# license
+## license
 
 Jijejo's specifications are under license [CC BY-NC-SA 4.0](http://creativecommons.org/licenses/by-nc-sa/4.0/)
 
