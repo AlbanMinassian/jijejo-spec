@@ -7,10 +7,10 @@
     },
     "description": "jijejo specification",
     "private": false,
-    "version": "1.0.5",
+    "version": "1.0.6",
     "type": "module",
     "main": "src/index.mjs",
-    "license": "CC-BY-NC-SA-4.0",
+    "license": "CC-BY-NC-ND-4.0",
     "scripts": {
         "build": "npm run build_feature",
         "build_feature": "node utils/2feature.mjs",
