@@ -9,7 +9,7 @@
 <text x="189" y="45" text-anchor="middle" fill="rgb(0,0,0)" dominant-baseline="central">(j)son (i)n</text>
 <text x="189" y="69" text-anchor="middle" fill="rgb(0,0,0)" dominant-baseline="central"> </text>
 <path d="M261,93L369,93L369,21L261,21Z"  style="fill:none;stroke-width:2.16;stroke:rgb(0,0,0);" />
-<text x="315" y="57" text-anchor="middle" fill="rgb(0,0,0)" dominant-baseline="central">jijejo</text>
+<text x="315" y="57" text-anchor="middle" font-weight="bold" fill="rgb(0,0,0)" dominant-baseline="central">JIJEJO</text>
 <polygon points="477,57 466,61 466,53" style="fill:rgb(0,0,0)"/>
 <path d="M369,57L472,57"  style="fill:none;stroke-width:2.16;stroke:rgb(0,0,0);" />
 <text x="423" y="45" text-anchor="middle" fill="rgb(0,0,0)" dominant-baseline="central">(j)son (o)ut</text>

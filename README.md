@@ -13,7 +13,7 @@ jijejo = (**j**)son (**i**)n + (**j**)son (**e**)rr + (**j**)son (**o**)ut
 
 ### rule n°1: ji = (j)son (i)n
 
-When you call a function, first param is a json with always/only two attributs `.meta`=`{...}`, **`.in`**=`<any>` (second param is an adapters param [Hexagonal architecture](https://en.wikipedia.org/wiki/Hexagonal_architecture_(software)))
+When you call a function, first param is a json with always/only two attributs `.meta`=`{...}`, **`.in`**=`<any>` (second param is zero or many adapters, [Hexagonal architecture](https://en.wikipedia.org/wiki/Hexagonal_architecture_(software)))
 
 ```js
 {
