@@ -4,7 +4,6 @@ Jijejo is a universal and easy api for all yours applications or libraries. Jije
 
 jijejo = (**j**)son (**i**)n + (**j**)son (**e**)rr + (**j**)son (**o**)ut
 
-<!--<img src="https://cloud.githubusercontent.com/assets/svg/draft.svg" width="50%" height="50%">-->
 ![https://cloud.githubusercontent.com/assets/svg/draft.svg](assets/svg/draft.png)
 
 ## Specifications
