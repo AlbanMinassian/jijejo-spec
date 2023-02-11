@@ -31,7 +31,7 @@
     },
     "devDependencies": {
         "indent-string": "4.0.0",
-        "nodemon": "2.0.4"
+        "nodemon": "2.0.20"
     },
     "engines": {
         "node": ">=14.4.0"
